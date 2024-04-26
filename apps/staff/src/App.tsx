@@ -32,9 +32,14 @@ const indexRoute = createRoute({
   component: () => <h1>Home</h1>
 });
 
-const viewAllStaffRoute = createRoute({
+const staffRootRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/staff",
+  path: "staff",
+});
+
+const viewAllStaffRoute = createRoute({
+  getParentRoute: () => staffRootRoute,
+  path: "/",
   component: () => (
     <Suspense fallback={<div>Loading...</div>}>
       <StaffList />
@@ -43,7 +48,7 @@ const viewAllStaffRoute = createRoute({
 });
 
 const viewStaffRoute = createRoute({
-  getParentRoute: () => viewAllStaffRoute,
+  getParentRoute: () => staffRootRoute,
   path: "$staffId",
   component: () => (
     <Suspense fallback={<div>Loading...</div>}>
@@ -52,7 +57,7 @@ const viewStaffRoute = createRoute({
   )
 });
 
-const routeTree = rootRoute.addChildren([indexRoute, viewAllStaffRoute, viewStaffRoute]);
+const routeTree = rootRoute.addChildren([indexRoute, staffRootRoute.addChildren([viewAllStaffRoute, viewStaffRoute])]);
 
 const router = createRouter({routeTree});
 
