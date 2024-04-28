@@ -31,7 +31,7 @@ const rootRoute = createRootRoute({
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
-  component: () => <h1>Home</h1>
+  component: () => <h1>Host App</h1>
 });
 
 // const attendanceRoute = createRoute({
