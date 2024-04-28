@@ -29,7 +29,7 @@ const rootRoute = createRootRoute({
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
-  component: () => <h1>Home</h1>
+  component: () => <h1>Remote App</h1>
 });
 
 const staffRootRoute = createRoute({
@@ -59,7 +59,7 @@ const viewStaffRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([indexRoute, staffRootRoute.addChildren([viewAllStaffRoute, viewStaffRoute])]);
 
-const router = createRouter({routeTree});
+const router = createRouter({ routeTree });
 
 declare module "@tanstack/react-router" {
   interface Register {
