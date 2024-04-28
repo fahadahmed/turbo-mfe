@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import federation from '@originjs/vite-plugin-federation'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import federation from '@originjs/vite-plugin-federation';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,7 +14,7 @@ export default defineConfig({
         './Staff': './src/pages/Staff',
         './$StaffId': './src/pages/$StaffId',
       },
-      shared: ['react', 'react-dom'],
+      shared: ['react', 'react-dom', '@tanstack/react-router'],
     }),
   ],
   build: {
@@ -22,5 +22,5 @@ export default defineConfig({
     target: 'esnext',
     minify: false,
     cssCodeSplit: false,
-  }
-})
+  },
+});

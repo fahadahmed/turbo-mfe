@@ -69,6 +69,9 @@ importers:
       '@tanstack/react-router':
         specifier: ^1.31.1
         version: 1.31.1(react-dom@18.2.0)(react@18.2.0)
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -2527,6 +2530,11 @@ packages:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
     dev: true
+
+  /dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
+    dev: false
 
   /electron-to-chromium@1.4.583:
     resolution: {integrity: sha512-93y1gcONABZ7uqYe/JWDVQP/Pj/sQSunF0HVAPdlg/pfBnOyBMLlQUxWvkqcljJg1+W6cjvPuYD+r1Th9Tn8mA==}

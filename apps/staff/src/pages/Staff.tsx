@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-
+import { useState, useEffect } from 'react';
 const staffData = [
   {
     id: 1,
@@ -19,13 +19,21 @@ const staffData = [
 ];
 
 export default function Staff() {
+  const [staff, setStaff] = useState(staffData);
+
+  useEffect(() => {
+    // fetch staff data
+    setStaff(staffData);
+  }
+    , []);
+
   return (
     <div>
       <h2>Staff</h2>
       <p>Staff page</p>
       <p>A listing of all staff for a service is displayed here.</p>
       <ul>
-        {staffData.map(staff => (
+        {staff.map(staff => (
           <li key={staff.id}>
             <Link to={`/staff/${staff.id}`}>{staff.name}</Link>
           </li>
